@@ -1,5 +1,5 @@
 
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 
 @Controller('user')
 export class UserController {
@@ -24,4 +24,12 @@ export class UserController {
 
     return users;
   }
+  @Get(':id')
+  getUserById(@Param('id') id:string){
+return [{
+    id:id,
+    name:"Azhar"
+}]
+  }
+
 }
